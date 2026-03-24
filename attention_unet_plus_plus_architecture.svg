@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <g>
+        <!-- Encoder Section -->
+        <rect x="50" y="50" width="150" height="100" fill="blue" />
+        <text x="125" y="110" fill="white" font-size="16" text-anchor="middle">Encoder</text>
+
+        <!-- Attention Gates Section -->
+        <rect x="250" y="50" width="150" height="100" fill="tan" />
+        <text x="325" y="110" fill="black" font-size="16" text-anchor="middle">Attention Gates</text>
+
+        <!-- Decoder Section -->
+        <rect x="450" y="50" width="150" height="100" fill="green" />
+        <text x="525" y="110" fill="white" font-size="16" text-anchor="middle">Decoder</text>
+
+        <!-- Bottleneck Section -->
+        <rect x="250" y="200" width="150" height="100" fill="purple" />
+        <text x="325" y="260" fill="white" font-size="16" text-anchor="middle">Bottleneck</text>
+
+        <!-- Arrows between sections -->
+        <line x1="200" y1="100" x2="250" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+        <line x1="400" y1="100" x2="450" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+        <!-- Marker for arrowhead -->
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="7" refX="0" refY="3.5" fill="black">
+                <polygon points="0 0, 10 3.5, 0 7" />
+            </marker>
+        </defs>
+    </g>
+</svg>
