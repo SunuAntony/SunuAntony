@@ -1,30 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-    <g>
-        <!-- Encoder Section -->
-        <rect x="50" y="50" width="150" height="100" fill="blue" />
-        <text x="125" y="110" fill="white" font-size="16" text-anchor="middle">Encoder</text>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .encoder { fill: #add8e6; }
+    .attention-gate { fill: #d2b48c; }
+    .decoder { fill: #90ee90; }
+    .bottleneck { fill: #9370db; }
+    .arrow { fill: none; stroke: #000; stroke-width: 2; }
+    .dashed { stroke-dasharray: 5, 5; }
+    text { font-family: Arial; font-size: 14px; }
+  </style>
 
-        <!-- Attention Gates Section -->
-        <rect x="250" y="50" width="150" height="100" fill="tan" />
-        <text x="325" y="110" fill="black" font-size="16" text-anchor="middle">Attention Gates</text>
+  <!-- Encoder Column -->
+  <rect class="encoder" x="50" y="100" width="100" height="50" rx="10" />
+  <text x="75" y="130" text-anchor="middle">64 Filters</text>
+  <rect class="encoder" x="50" y="200" width="100" height="50" rx="10" />
+  <text x="75" y="230" text-anchor="middle">128 Filters</text>
+  <rect class="encoder" x="50" y="300" width="100" height="50" rx="10" />
+  <text x="75" y="330" text-anchor="middle">256 Filters</text>
+  <rect class="encoder" x="50" y="400" width="100" height="50" rx="10" />
+  <text x="75" y="430" text-anchor="middle">512 Filters</text>
+  <line class="arrow" x1="150" y1="125" x2="200" y2="125"/>
+  <line class="arrow" x1="150" y1="225" x2="200" y2="225"/>
+  <line class="arrow" x1="150" y1="325" x2="200" y2="325"/>
+  <line class="arrow" x1="150" y1="425" x2="200" y2="425"/>
 
-        <!-- Decoder Section -->
-        <rect x="450" y="50" width="150" height="100" fill="green" />
-        <text x="525" y="110" fill="white" font-size="16" text-anchor="middle">Decoder</text>
+  <!-- Attention Gates Column -->
+  <rect class="attention-gate" x="200" y="100" width="100" height="50" rx="10" />
+  <text x="250" y="130" text-anchor="middle">Attention Gate 1</text>
+  <rect class="attention-gate" x="200" y="200" width="100" height="50" rx="10" />
+  <text x="250" y="230" text-anchor="middle">Attention Gate 2</text>
+  <rect class="attention-gate" x="200" y="300" width="100" height="50" rx="10" />
+  <text x="250" y="330" text-anchor="middle">Attention Gate 3</text>
+  <line class="arrow dashed" x1="300" y1="125" x2="300" y2="200"/>
+  <line class="arrow dashed" x1="300" y1="225" x2="300" y2="300"/>
 
-        <!-- Bottleneck Section -->
-        <rect x="250" y="200" width="150" height="100" fill="purple" />
-        <text x="325" y="260" fill="white" font-size="16" text-anchor="middle">Bottleneck</text>
+  <!-- Decoder Column -->
+  <rect class="decoder" x="400" y="200" width="100" height="50" rx="10" />
+  <text x="450" y="230" text-anchor="middle">Decoder 1</text>
+  <rect class="decoder" x="400" y="300" width="100" height="50" rx="10" />
+  <text x="450" y="330" text-anchor="middle">Decoder 2</text>
+  <rect class="decoder" x="400" y="400" width="100" height="50" rx="10" />
+  <text x="450" y="430" text-anchor="middle">Decoder 3</text>
+  <line class="arrow" x1="500" y1="225" x2="600" y2="400"/>
+  <line class="arrow" x1="500" y1="325" x2="600" y2="500"/>
 
-        <!-- Arrows between sections -->
-        <line x1="200" y1="100" x2="250" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
-        <line x1="400" y1="100" x2="450" y2="100" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Bottleneck -->
+  <rect class="bottleneck" x="250" y="350" width="100" height="50" rx="10" />
+  <text x="300" y="380" text-anchor="middle">Bottleneck</text>
 
-        <!-- Marker for arrowhead -->
-        <defs>
-            <marker id="arrow" markerWidth="10" markerHeight="7" refX="0" refY="3.5" fill="black">
-                <polygon points="0 0, 10 3.5, 0 7" />
-            </marker>
-        </defs>
-    </g>
+  <!-- Input and Output -->
+  <text x="25" y="50">SAR Input Patch (3 x 256 x 256)</text>
+  <text x="325" y="550">Output Mask (1 x 256 x 256, Sigmoid)</text>
 </svg>
